@@ -13,6 +13,28 @@
 
 ---
 
+## Table of Contents
+
+- [A. Pre-flight (one-time per project)](#a-pre-flight-one-time-per-project)
+  - [A.1 Tools & environment](#a1-tools--environment)
+  - [A.2 The agent rules file (AGENTS.md / CLAUDE.md / .guidelines)](#a2-the-agent-rules-file-agentsmd--claudemd--guidelines)
+  - [A.3 Scripts contract](#a3-scripts-contract)
+  - [A.4 Optional: Playwright auto-screenshots for UI work](#a4-optional-playwright-auto-screenshots-for-ui-work)
+- [B. The Workflow (per feature)](#b-the-workflow-per-feature)
+  - [B.1 Requirement intake](#b1-requirement-intake)
+  - [B.2 Council of Agents brainstorm](#b2-council-of-agents-brainstorm)
+  - [B.3 Consolidated prompt prep](#b3-consolidated-prompt-prep)
+  - [B.4 Plan mode → review → finalize](#b4-plan-mode--review--finalize)
+  - [B.5 Implementation](#b5-implementation)
+  - [B.6 Manual verification & stage](#b6-manual-verification--stage)
+  - [B.7 Code-quality audit (same session)](#b7-code-quality-audit-same-session)
+  - [B.8 Atomic commits](#b8-atomic-commits)
+  - [B.9 Cross-agent review (`/review`)](#b9-cross-agent-review-review)
+  - [B.10 Fresh-mind manual review](#b10-fresh-mind-manual-review)
+  - [B.11 Open PR via `gh` CLI](#b11-open-pr-via-gh-cli)
+  - [B.12 AI code-reviewer feedback loop](#b12-ai-code-reviewer-feedback-loop)
+- [C. Operating principles (ambient rules)](#c-operating-principles-ambient-rules)
+
 ## A. Pre-flight (one-time per project)
 
 ### A.1 Tools & environment
