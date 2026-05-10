@@ -5,6 +5,18 @@ An **opinionated** practitioner's playbook for shipping software with AI coding 
 > [!TIP]
 > **Fork it. Hack it. Adopt it.** This repo is a living scaffold, not a finished artifact. Fork it, swap the placeholders for your team's links, snippets, and conventions, and trim what doesn't apply. Disagree with a step? Replace it. The structure is the contribution; the specifics are negotiable.
 
+## Table of Contents
+
+- [Who it's for](#who-its-for)
+- [Scope](#scope)
+- [What's in here](#whats-in-here)
+- [How to read](#how-to-read)
+- [What you'll need](#what-youll-need)
+- [Conventions](#conventions)
+- [The spirit](#the-spirit)
+- [Credits](#credits)
+- [License](#license)
+
 ## Who it's for
 
 - **Developers already using AI coding agents** who want to sharpen their workflow and stop fighting non-determinism.
@@ -47,9 +59,8 @@ Reasonably-sized feature work — anything from "add OAuth" to "build a multi-st
 
 ## What you'll need
 
-- **Coding agents:** Claude Code + Codex (terminal or desktop).
-- **Standard tooling:** Git, the `gh` CLI, your team's lint / typecheck / test scripts.
-- **Optional but recommended:** Playwright skill for UI work — see [Base §A.4](./01-base-guide.md#a4-optional-playwright-auto-screenshots-for-ui-work) and [Resources → Agent Skills](./06-resources.md#agent-skills).
+- **Coding agents:** Claude Code + Codex (terminal or desktop apps).
+- **Standard tooling:** VSCode, Simple Text Editor, Git, `gh` CLI, your team's preferred coding and PR conventions.
 
 ## Conventions
 
