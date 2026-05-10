@@ -58,7 +58,7 @@ For Enterprise work, "code exists" ≠ "done." A feature is done when _all_ of:
 
 ### B.1 Requirement intake
 
-**Plus:** NFR identification per feature. For each feature, list applicable NFRs:
+**Plus:** NFR identification per feature. Pull from the project-wide ceilings set in A.0a; pick what applies and assign specific budgets. For each feature, list applicable NFRs:
 
 - **Perf budget** (latency, throughput, memory, bundle size)
 - **Security** (auth, authz, PII, audit logging, threat-model touch points)

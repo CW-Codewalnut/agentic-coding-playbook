@@ -21,6 +21,8 @@ Before writing any new feature, capture _what's actually there_ into your agent 
 
 > **Pro Tip:** This is a one-time cost. Spend a couple of hours getting it right; you'll recoup it in every subsequent feature session.
 
+> **Pro Tip:** On large repos / monorepos, scope the agent first — _"Read only [specific paths]"_ — or run pattern extraction per package. A blanket "read this codebase" silently truncates on anything sizeable.
+
 > **Pro Tip:** If the codebase has multiple inconsistent patterns, document the _preferred_ one and add a note like "legacy modules use [old pattern] — don't follow that for new code."
 
 **Outcome:** AGENTS.md and `.guidelines/` reflecting the existing project's actual conventions.

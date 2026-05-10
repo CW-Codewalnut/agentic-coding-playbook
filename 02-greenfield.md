@@ -20,7 +20,7 @@ Before any code or AGENTS.md exists, decide the architecture _shape_.
   - Auth model
   - Deployment topology (monolith, microservices, serverless)
   - Observability stack
-- Consolidate. Pick. Write **ADR-001** capturing the decision and rationale.
+- Consolidate. Pick. Write **ADR-001** (Architecture Decision Record — see [Michael Nygard's template](https://github.com/joelparkerhenderson/architecture-decision-record/blob/main/locales/en/templates/decision-record-template-by-michael-nygard/index.md)) capturing the decision and rationale.
 
 > **Pro Tip:** Don't decide framework versions or specific libraries here — pick those when you actually need them. Decide _shape_ only.
 

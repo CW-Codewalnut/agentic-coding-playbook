@@ -6,7 +6,7 @@
 >
 > **Scope:** Reasonably-sized feature work — anything from "add OAuth" to "build a multi-step wizard." For one-line bug fixes or trivial tasks, use judgment and skip phases.
 >
-> **How to read this playbook:** This Base Guide is your default. The four variant docs — [Greenfield](./02-greenfield.md), [Brownfield](./03-brownfield.md), [Refactoring Legacy](./04-refactoring-legacy.md), [Enterprise](./05-enterprise.md) — follow the same outline. Under each phase, variants either say `→ Same as Base §N.` (one line, no change) or list `Plus` / `Instead` deltas. Open the variant doc matching your project shape, follow the deltas where present, otherwise follow this Base. Reusable snippets, model picks, and tool refs live in [Resources](./06-resources.md).
+> **How to read this playbook:** This Base Guide is your default. The four variant docs — [Greenfield](./02-greenfield.md), [Brownfield](./03-brownfield.md), [Refactoring Legacy](./04-refactoring-legacy.md), [Enterprise](./05-enterprise.md) — follow the same outline. Under each phase, variants either say `→ Same as Base §N.` (one line, no change) or list `Plus` / `Instead` deltas. Open the variant doc matching your project shape, follow the deltas where present, otherwise follow this Base..
 >
 > **This is opinionated.** It's one team's workflow, refined across real projects — not the One True Way. Steal what works.
 
@@ -192,7 +192,7 @@ The high-leverage review step. **The agent that did the implementation does NOT 
 After cross-agent review and commits, **sleep on it**. Open the diff the next morning with fresh eyes. This is a pre-AI habit — still essential.
 
 - Review the feature end-to-end, not just the diff. Walk the flow from entry point to outcome, scan adjacent functions, callers, and related modules. The diff is just where the change landed — your job is to understand what the feature actually _does_ in the system. Same way you did reviews pre-AI.
-- Aim for fingertip familiarity with your own code. Pre-AI, wake you at 3am with a stack trace and you'd land on the offending line from memory — logs in, line of code out. That bar hasn't moved. Agents write the code; _you_ still own it. If you can't answer a question about your own feature without re-opening the file, you haven't really reviewed it.
+- You should be able to explain any line of your own PR without re-opening the file. Agents write the code; _you_ still own it.
 - The point isn't catching what the agents missed — they probably caught more than you will. The point is _you_ can **explain the PR** — explain decisions, justify trade-offs, answer reviewer pushback, reason about on-call implications. Knowing what shipped is just the floor.
 - Anything material to change: hand notes to your coding agent — _"Apply these changes: [list]"_ — then re-run §B.7 (audit), §B.8 (commits), and a quick `/review` re-run.
 

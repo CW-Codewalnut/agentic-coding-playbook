@@ -2,7 +2,7 @@
 
 An **opinionated** practitioner's playbook for shipping software with AI coding agents. Bulleted, scannable, decisive — not a tutorial, not a survey of options.
 
-> **Fork it. Hack it. Adopt it.** This repo is a living scaffold, not a finished artefact. Fork it, swap the placeholders for your team's links, snippets, and conventions, and trim what doesn't apply. Disagree with a step? Replace it. The structure is the contribution; the specifics are negotiable.
+> **Fork it. Hack it. Adopt it.** This repo is a living scaffold, not a finished artifact. Fork it, swap the placeholders for your team's links, snippets, and conventions, and trim what doesn't apply. Disagree with a step? Replace it. The structure is the contribution; the specifics are negotiable.
 
 ## Who it's for
 
@@ -24,7 +24,7 @@ Reasonably-sized feature work — anything from "add OAuth" to "build a multi-st
 ├── 03-brownfield.md              ← variant: existing codebase
 ├── 04-refactoring-legacy.md      ← variant: behavior-preserving refactor
 ├── 05-enterprise.md              ← multiplier: high-NFR / regulated
-├── 06-resources.md               ← prompt snippets, model picks, skill links
+├── 06-resources.md               ← model picks, tool refs, skill links
 └── resources/                    ← opinionated TS-stack templates — copy into your repo and fill placeholders
     ├── AGENTS.md
     └── .guidelines/
@@ -42,9 +42,7 @@ Reasonably-sized feature work — anything from "add OAuth" to "build a multi-st
    - **[Brownfield](./03-brownfield.md)** — adding features to an existing codebase.
    - **[Refactoring Legacy](./04-refactoring-legacy.md)** — improving structure without changing behavior.
    - **[Enterprise (High-NFR)](./05-enterprise.md)** — stacks on top of the variant above when you have hard non-functional requirements (perf, a11y, compliance, observability).
-3. Keep **[Resources](./06-resources.md)** open for prompt snippets, model tier picks, and skill links.
-
-After the first read, treat all six as quick-reference. Variants follow the same outline as the Base Guide — each phase is either `→ Same as Base §N.` or carries `Plus` / `Instead` deltas. You only re-read the deltas.
+3. Keep **[Resources](./06-resources.md)** open for model tier picks, tool refs, and skill links.
 
 ## What you'll need
 
@@ -58,6 +56,10 @@ After the first read, treat all six as quick-reference. Variants follow the same
 - **Pro Tips** appear as block quotes; **prompt snippets** appear as fenced code.
 - **Stable section IDs** (`§A.1`, `§B.7`, …) — variants reference them.
 - **Tier vocabulary** (`Heavy` / `Standard` / `Light`) for model picks — defined in [Resources → Model picks](./06-resources.md#model-picks-per-task).
+
+## The spirit
+
+> **Outcome engineering, not output engineering.** "Code merged" is not the goal — "system observably reliable in production" is. Every phase in the playbook serves that.
 
 ## Credits
 
