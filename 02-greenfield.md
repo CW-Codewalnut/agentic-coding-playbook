@@ -12,7 +12,7 @@
 
 Before any code or AGENTS.md exists, decide the architecture _shape_.
 
-- Open plain-text editor. Write: product vision (3 lines), expected user load, core domain entities, must-have constraints (e.g. "must run on a single VPS", "team only knows TypeScript").
+- Open plain-text editor. Write: product vision (3 lines), expected user load, core domain entities, must-have constraints.
 - Run **Council of Agents** brainstorm (2× Claude + 1× Codex, fresh sessions). Each session researches industry best practices and proposes options for:
   - Frontend / backend / full-stack frameworks
   - Runtime (Bun, Node, Python, Go)
@@ -23,8 +23,6 @@ Before any code or AGENTS.md exists, decide the architecture _shape_.
 - Consolidate. Pick. Write **ADR-001** capturing the decision and rationale.
 
 > **Pro Tip:** Don't decide framework versions or specific libraries here — pick those when you actually need them. Decide _shape_ only.
-
-> **Pro Tip:** When in doubt, pick boring. The agent's "innovative" tech-stack suggestion is usually wrong for production.
 
 **Outcome:** ADR-001 in `docs/adr/` describing the architecture shape. You know what to put in `AGENTS.md` next.
 
@@ -63,7 +61,7 @@ Before any code or AGENTS.md exists, decide the architecture _shape_.
 
 → Same as Base §B.2.
 
-**Plus:** Since there's no existing code constraining choices, ask the council to research industry best practices more aggressively. Phrasing: _"I have full freedom on implementation. Research how teams typically solve this in [stack] in 2025. Compare 3 approaches."_
+**Plus:** Since there's no existing code constraining choices, ask the council to research industry best practices more aggressively. Phrasing: _"I have full freedom on implementation. Research how teams typically solve this in [stack] in 2026. Compare 3 approaches."_
 
 ### B.3 Consolidated prompt prep
 
@@ -109,7 +107,7 @@ Before any code or AGENTS.md exists, decide the architecture _shape_.
 
 → Same as Base §B.12.
 
-**Plus:** Set up CodeRabbit / MergeMitra / equivalent on the repo before merging the second PR.
+**Plus:** Set up MergeMitra / CodeRabbit / equivalent on the repo before merging the second PR.
 
 ---
 

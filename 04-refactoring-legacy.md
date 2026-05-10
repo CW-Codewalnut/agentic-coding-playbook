@@ -3,8 +3,6 @@
 > **What this is:** Existing code, possibly old, possibly poorly understood. You're improving structure, performance, or readability — _not_ adding new functionality. **Behavior preservation is the #1 success criterion.**
 >
 > **How to read:** Outline mirrors the [Base Guide](./01-base-guide.md). Under each phase, you'll see either `→ Same as Base §N.` or `Plus` / `Instead` deltas. This variant has the most divergence — read it carefully.
->
-> _Scope: reasonably-sized refactor work (see Base intro)._
 
 ---
 
@@ -32,7 +30,13 @@ Before any refactor, build a safety net.
 
 ### A.2 The agent rules file
 
-→ Same as Brownfield §A.2 (extract existing conventions). For refactor work you mostly need them at module scope, not whole-project.
+**Instead:** Don't blindly extract existing conventions — the code you're refactoring is likely the reason those conventions are suspect. Scope the rules to the refactor target (module-level, not whole-project) and split them into three buckets:
+
+- **Preserve** — external contracts the refactor must not break: public APIs, DB schemas, message formats, file/route names other systems depend on, naming that leaks into logs/metrics/dashboards.
+- **Target** — the conventions the refactored code should move _toward_: the patterns, structure, naming, and idioms you want to see post-refactor. These often come from the quality goal in B.1 or from a known-good module elsewhere in the repo.
+- **Avoid** — anti-patterns present in the current code that the agent should not propagate when moving or extracting it (god objects, hidden globals, mixed concerns, swallowed errors, whatever's specific to your mess).
+
+> **Pro Tip:** If the wider repo has a healthy module you're refactoring _toward_, point the agent at it explicitly: _"Match the structure and conventions of `[good/module]`."_ Concrete exemplar beats abstract rule every time.
 
 ### A.3 Scripts contract
 

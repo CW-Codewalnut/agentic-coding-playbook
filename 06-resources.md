@@ -36,7 +36,7 @@ Opinionated templates for a TypeScript / Bun / Biome / Zod stack live in [`resou
 
 ### Terminal
 
-- Ghostty (or any terminal of choice)
+- Ghostty
 
 ---
 
@@ -66,11 +66,11 @@ Opinionated templates for a TypeScript / Bun / Biome / Zod stack live in [`resou
 
 ## Agent Skills
 
-> _Skills installed across sessions. Each link points to [skills.sh](https://skills.sh/) — install via your agent's skill manager._
+> _Skills installed across sessions. Each link points to [skills.sh](https://skills.sh/)._
 
 - **[Superpowers](https://skills.sh/obra/superpowers)** by `obra` — meta-skill bundle: brainstorming, writing-plans, debugging, and more.
 - **[Frontend Design](https://skills.sh/anthropics/skills/frontend-design)** by Anthropic — UI / frontend implementation guidance.
-- **[Playwright CLI](https://skills.sh/microsoft/playwright-cli/playwright-cli)** by Microsoft — browser automation and screenshot verification. Referenced in [Base §A.4](./01-base-guide.md#a4-optional-playwright-auto-screenshots-for-ui-work).
-- **[PR Document Writer](https://skills.sh/cw-codewalnut/agent-skills/pr-document-writer)** by Code Walnut — generates PR titles and descriptions to a template.
-- **[Awesome Copilot](https://skills.sh/github/awesome-copilot)** by GitHub — curated collection of Copilot-related skills and assets.
-- **[Grill Me](https://skills.sh/mattpocock/skills/grill-me)** by `mattpocock` — relentless interviewing skill that stress-tests plans and designs through systematic questioning. Useful as an extra lens during plan-mode review (Base §B.4).
+- **[Playwright CLI](https://skills.sh/microsoft/playwright-cli/playwright-cli)** by Microsoft — browser automation and UI verification.
+- **[PR Document Writer](https://skills.sh/cw-codewalnut/agent-skills/pr-document-writer)** by CodeWalnut — generates PR titles and descriptions to a template.
+- **[Awesome Copilot](https://skills.sh/github/awesome-copilot)** by GitHub — curated collection of Agent skills and assets.
+- **[Grill Me](https://skills.sh/mattpocock/skills/grill-me)** by mattpocock — relentless interviewing skill that stress-tests plans and designs through systematic questioning.
