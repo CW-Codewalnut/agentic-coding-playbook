@@ -1,5 +1,6 @@
 # Enterprise (High-NFR) — Agentic Coding Playbook
 
+> [!NOTE]
 > **What this is:** A _multiplier_ on top of one of the other variants — Greenfield, Brownfield, or Refactoring Legacy. Use when:
 >
 > - The system has hard non-functional requirements (perf budgets, accessibility, compliance, observability)
@@ -50,7 +51,8 @@ For Enterprise work, "code exists" ≠ "done." A feature is done when _all_ of:
 - [ ] Rollout plan documented
 - [ ] Deployable to production
 
-> **Pro Tip:** Bake this list into your repo's PR template as checkboxes. Reviewers see what hasn't been ticked.
+> [!TIP]
+> Bake this list into your repo's PR template as checkboxes. Reviewers see what hasn't been ticked.
 
 ---
 
@@ -142,7 +144,8 @@ Acceptance criteria must explicitly include NFR validation.
 - Feature flag config
 - Rollout plan + rollback procedure
 
-> **Pro Tip:** This is what "merge-readiness" looks like in real enterprise teams. It's tedious. Automate as much of the evidence pack as your CI can produce — leave only the human-judgment items for the PR author.
+> [!TIP]
+> This is what "merge-readiness" looks like in real enterprise teams. It's tedious. Automate as much of the evidence pack as your CI can produce — leave only the human-judgment items for the PR author.
 
 ### B.12 AI code-reviewer feedback loop + Human gates
 

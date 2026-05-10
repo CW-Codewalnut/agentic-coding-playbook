@@ -1,5 +1,6 @@
 # Base Guide — Agentic Coding Playbook
 
+> [!NOTE]
 > **The default workflow for coding with AI agents.** Read end-to-end once. After that, treat as quick-reference.
 >
 > **Audience:** Developers with 1+ year of experience.
@@ -21,6 +22,7 @@
 - **Single source of truth for changes:** Git. The diff viewer is your ground truth for what an agent changed.
 - **Skills:** see [Resources → Agent Skills](./06-resources.md#agent-skills).
 
+> [!NOTE]
 > **Why no AI in the editor?** Pick one surface for AI work — terminal or desktop app — and stay there. Editor AI fragments your attention and pollutes the diff with un-tracked tweaks. The editor's job is managing code and git, nothing more.
 
 ### A.2 The agent rules file (AGENTS.md / CLAUDE.md / .guidelines)
@@ -39,8 +41,10 @@ What goes in `AGENTS.md`:
 - Naming conventions (kebab-case files, camelCase exports, PascalCase components — your team's choice)
 - Final line: "Always follow conventions in `.guidelines/`"
 
-> **Pro Tip:** Keep the `AGENTS.md` overview short. It's loaded into every agent session — long overviews burn context budget without payback.
+> [!TIP]
+> Keep the `AGENTS.md` overview short. It's loaded into every agent session — long overviews burn context budget without payback.
 
+> [!NOTE]
 > **Reference templates:** Opinionated TS-stack scaffolds for `AGENTS.md` and `.guidelines/` live in [`resources/`](./resources/) — copy them into your repo and fill the placeholders. See [Resources → Reference templates](./06-resources.md#reference-templates-agentsmd--guidelines).
 
 ### A.3 Scripts contract
@@ -61,7 +65,9 @@ Every agent turn auto-runs your formatter, linter, type-checker, tests, and e2e 
 
 Add this line to `AGENTS.md`:
 
-> When making UI changes, spin up the dev server (if not running already), then use the Playwright CLI to navigate, take screenshots, and verify both layout and behavior.
+```
+When making UI changes, spin up the dev server (if not running already), then use the Playwright CLI to navigate, take screenshots, and verify both layout and behavior.
+```
 
 With this in place + the Playwright CLI skill installed, _every_ UI turn ends with verification automatically. No need to mention it in the prompt.
 
@@ -77,6 +83,7 @@ With this in place + the Playwright CLI skill installed, _every_ UI turn ends wi
 - Capture **edge cases and nuances** you already know.
 - Make every requirement **verifiable** — if you can't test it, it's not a requirement.
 
+> [!IMPORTANT]
 > **Why a separate editor?** You re-read your prompts. You add context you forgot. You catch ambiguity. The 5–10 minutes spent here cuts an hour of post-implementation correction. **Single biggest leverage habit in the playbook.**
 
 **Outcome:** A plain-text requirement file with acceptance criteria + known edge cases.
@@ -99,9 +106,11 @@ After all three sessions complete:
 - Send a follow-up in the _same_ session: _"Now identify edge cases, nuances, and constraints for the chosen approach."_
 - Consolidate answers from all three sessions. Most overlap; the non-overlap is gold.
 
+> [!IMPORTANT]
 > **Why three sessions?** LLMs are probabilistic. Same prompt, different sessions, different ideas. You're turning non-determinism — usually a flaw — into wider coverage. Hence: _Council of Agents._
 
-> **Pro Tip:** If the problem is genuinely unknown to you, say so explicitly: _"I have only a vague idea of how to implement this. Lay down options and rank them."_ The agent calibrates better when it knows your knowledge level.
+> [!TIP]
+> If the problem is genuinely unknown to you, say so explicitly: _"I have only a vague idea of how to implement this. Lay down options and rank them."_ The agent calibrates better when it knows your knowledge level.
 
 **Outcome:** A consolidated set of trade-off-ranked approaches + edge cases + constraints. Your chosen approach, written down.
 
@@ -111,9 +120,11 @@ After all three sessions complete:
 - Combine: requirement + acceptance criteria + edge cases + chosen approach + nuances/constraints from B.2.
 - **Manually** decide whether to split the work into smaller chunks. If yes, define the chunks.
 
+> [!IMPORTANT]
 > **On chunk size:** Modern agents handle long-running tasks well, with auto-compaction. Don't over-split. But don't ask for "build the whole platform" in one turn either. **Your intuition is the splitter — not the AI's.**
 
-> **Pro Tip:** Re-read the consolidated prompt twice before sending. The cost of re-reading is minutes; the cost of missing context is hours.
+> [!TIP]
+> Re-read the consolidated prompt twice before sending. The cost of re-reading is minutes; the cost of missing context is hours.
 
 **Outcome:** A single prompt (or ordered list of prompts, one per chunk) ready to paste.
 
@@ -136,7 +147,8 @@ After all three sessions complete:
   - Auto-fix anything the checks surface
   - Run a Playwright pass if you set up A.4
 
-> **Pro Tip — Caffeinate (macOS):** Long agent runs get killed by sleep settings. Wrap the agent: `caffeinate -i claude`. Already running and you forgot? Attach to its PID: `caffeinate -i -w <PID>` or for a fixed timer (e.g. 2 hours = 7200s): `caffeinate -i -t 7200`. Stash an alias in your shell profile so you never forget.
+> [!TIP]
+> **Caffeinate (macOS):** Long agent runs get killed by sleep settings. Wrap the agent: `caffeinate -i claude`. Already running and you forgot? Attach to its PID: `caffeinate -i -w <PID>` or for a fixed timer (e.g. 2 hours = 7200s): `caffeinate -i -t 7200`. Stash an alias in your shell profile so you never forget.
 
 **Outcome:** Code is written, all automated checks pass, screenshots exist for UI work.
 
@@ -147,7 +159,8 @@ After all three sessions complete:
 - If you have an external E2E suite, run it.
 - **Stage the files. Do not commit yet.**
 
-> **Pro Tip:** Pre-AI, you'd manually test before committing. That habit doesn't go away — agents replace typing, not testing.
+> [!TIP]
+> Pre-AI, you'd manually test before committing. That habit doesn't go away — agents replace typing, not testing.
 
 **Outcome:** Staged changes that you've verified meet the requirements.
 
@@ -158,6 +171,7 @@ After all three sessions complete:
 - The agent returns a list of nits. Have it fix them.
 - Do a quick at-a-glance review yourself — naming, folder placement, file size, obvious smell. Don't deep-dive.
 
+> [!NOTE]
 > **Why not deep-dive yourself?** Functional review happens in B.9 with a different agent. This step is just code-quality polish.
 
 **Outcome:** Clean staged diff matching team conventions.
@@ -183,7 +197,8 @@ The high-leverage review step. **The agent that did the implementation does NOT 
 - After fixes: re-run B.7 (code-quality audit on new changes), stage, commit (B.8).
 - **Re-run `/review` with the same prompt** in a fresh session — should come back clean (or close to).
 
-> **Pro Tip:** The review prompt doesn't need full requirement detail — the code itself communicates intent. Give a high-level overview + constraints only.
+> [!TIP]
+> The review prompt doesn't need full requirement detail — the code itself communicates intent. Give a high-level overview + constraints only.
 
 **Outcome:** Functional issues caught and fixed; review re-run is clean.
 
@@ -196,6 +211,7 @@ After cross-agent review and commits, **sleep on it**. Open the diff the next mo
 - The point isn't catching what the agents missed — they probably caught more than you will. The point is _you_ can **explain the PR** — explain decisions, justify trade-offs, answer reviewer pushback, reason about on-call implications. Knowing what shipped is just the floor.
 - Anything material to change: hand notes to your coding agent — _"Apply these changes: [list]"_ — then re-run §B.7 (audit), §B.8 (commits), and a quick `/review` re-run.
 
+> [!IMPORTANT]
 > **Why this step?** (1) You'll own this code in production — reviewers, on-call, post-mortem readers all assume you understand it. (2) Tired-you misses things fresh-you catches. Sleeping on a feature is the cheapest pair of glasses you'll buy.
 
 **Outcome:** You've personally read the change and the surrounding code. You can explain the PR.
@@ -238,4 +254,5 @@ These aren't phases — they apply across the whole workflow.
 
 ---
 
+> [!NOTE]
 > **Scope reminder:** This Base Guide is for reasonably-sized feature work. For one-line bug fixes, hot-fixes, or trivial tasks: skip phases that don't add value. The framework is the default, not the law.

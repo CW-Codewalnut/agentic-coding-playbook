@@ -2,6 +2,7 @@
 
 An **opinionated** practitioner's playbook for shipping software with AI coding agents. Bulleted, scannable, decisive — not a tutorial, not a survey of options.
 
+> [!TIP]
 > **Fork it. Hack it. Adopt it.** This repo is a living scaffold, not a finished artifact. Fork it, swap the placeholders for your team's links, snippets, and conventions, and trim what doesn't apply. Disagree with a step? Replace it. The structure is the contribution; the specifics are negotiable.
 
 ## Who it's for
@@ -53,12 +54,13 @@ Reasonably-sized feature work — anything from "add OAuth" to "build a multi-st
 ## Conventions
 
 - **Bulleted, imperative, scannable** — designed to be re-read, not read once.
-- **Pro Tips** appear as block quotes; **prompt snippets** appear as fenced code.
+- **Pro Tips** and rationale notes appear as GitHub alerts (`[!TIP]`, `[!IMPORTANT]`, `[!NOTE]`); **prompt snippets** appear as fenced code.
 - **Stable section IDs** (`§A.1`, `§B.7`, …) — variants reference them.
 - **Tier vocabulary** (`Heavy` / `Standard` / `Light`) for model picks — defined in [Resources → Model picks](./06-resources.md#model-picks-per-task).
 
 ## The spirit
 
+> [!IMPORTANT]
 > **Outcome engineering, not output engineering.** "Code merged" is not the goal — "system observably reliable in production" is. Every phase in the playbook serves that.
 
 ## Credits

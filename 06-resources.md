@@ -1,5 +1,6 @@
 # Resources — Agentic Coding Playbook
 
+> [!NOTE]
 > **What this is:** Reference material for the workflow — skill links, tool refs, model picks. Cross-referenced from the [Base Guide](./01-base-guide.md) and the four variant docs.
 >
 > **How to use:** This is a living scaffold. Fork the repo, fill the placeholders with your team's snippets, links, and conventions, and keep it high-signal as your stack evolves.
@@ -13,7 +14,8 @@ Opinionated templates for a TypeScript / Bun / Biome / Zod stack live in [`resou
 - [`resources/AGENTS.md`](./resources/AGENTS.md) — drop at your repo root. Project-related sections (overview, structure, env vars) are placeholders; conventions, scripts, and global tech stack are sane defaults. See [Base §A.2](./01-base-guide.md#a2-the-agent-rules-file-agentsmd--claudemd--guidelines) for the setup notes.
 - [`resources/.guidelines/`](./resources/.guidelines/) — drop at your repo root. Ships with stub files for `standard.md`, `javascript.md`, `typescript.md`, and `react.md` (front matter only). Add per-framework files as you grow (e.g. `python.md`, `db.md`, `commits.md`, `pr-template.md`).
 
-> **Pro Tip:** Don't try to fill these in one sitting. Start with what you know; let the conventions accumulate as your agent sessions surface them.
+> [!TIP]
+> Don't try to fill these in one sitting. Start with what you know; let the conventions accumulate as your agent sessions surface them.
 
 ---
 
@@ -42,6 +44,7 @@ Opinionated templates for a TypeScript / Bun / Biome / Zod stack live in [`resou
 
 ## Model picks per task
 
+> [!NOTE]
 > **Legend.** Three tiers:
 >
 > - **Heavy** — Claude Opus 4.5+ high; GPT-5.4+ xhigh.
@@ -66,7 +69,8 @@ Opinionated templates for a TypeScript / Bun / Biome / Zod stack live in [`resou
 
 ## Agent Skills
 
-> _Skills installed across sessions. Each link points to [skills.sh](https://skills.sh/)._
+> [!NOTE]
+> Skills installed across sessions. Each link points to [skills.sh](https://skills.sh/).
 
 - **[Superpowers](https://skills.sh/obra/superpowers)** — meta-skill bundle: brainstorming, writing-plans, debugging, and more.
 - **[Frontend Design](https://skills.sh/anthropics/skills/frontend-design)** — UI / frontend implementation guidance.

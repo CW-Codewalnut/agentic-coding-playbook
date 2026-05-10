@@ -1,5 +1,6 @@
 # Refactoring Legacy — Agentic Coding Playbook
 
+> [!NOTE]
 > **What this is:** Existing code, possibly old, possibly poorly understood. You're improving structure, performance, or readability — _not_ adding new functionality. **Behavior preservation is the #1 success criterion.**
 >
 > **How to read:** Outline mirrors the [Base Guide](./01-base-guide.md). Under each phase, you'll see either `→ Same as Base §N.` or `Plus` / `Instead` deltas. This variant has the most divergence — read it carefully.
@@ -18,9 +19,11 @@ Before any refactor, build a safety net.
 4. **Generate characterization tests.** _"Generate tests for the 'must preserve' items in this spec. Tests should fail if the behavior changes."_
 5. **Run the tests against the current code.** All "must preserve" tests must pass _before_ any refactor begins. This is your baseline.
 
-> **Pro Tip:** If a "must preserve" test fails on the current code, you've found existing behavior that disagrees with the spec — a hidden bug. Decide: fix-and-update-spec, or document-as-known-quirk-and-update-test.
+> [!TIP]
+> If a "must preserve" test fails on the current code, you've found existing behavior that disagrees with the spec — a hidden bug. Decide: fix-and-update-spec, or document-as-known-quirk-and-update-test.
 
-> **Pro Tip:** Characterization tests don't have to be pretty — they just have to fail when behavior changes. Don't over-engineer them.
+> [!TIP]
+> Characterization tests don't have to be pretty — they just have to fail when behavior changes. Don't over-engineer them.
 
 **Outcome:** Validated spec, characterization test suite, all green against current code. This is your safety net.
 
@@ -36,7 +39,8 @@ Before any refactor, build a safety net.
 - **Target** — the conventions the refactored code should move _toward_: the patterns, structure, naming, and idioms you want to see post-refactor. These often come from the quality goal in B.1 or from a known-good module elsewhere in the repo.
 - **Avoid** — anti-patterns present in the current code that the agent should not propagate when moving or extracting it (god objects, hidden globals, mixed concerns, swallowed errors, whatever's specific to your mess).
 
-> **Pro Tip:** If the wider repo has a healthy module you're refactoring _toward_, point the agent at it explicitly: _"Match the structure and conventions of `[good/module]`."_ Concrete exemplar beats abstract rule every time.
+> [!TIP]
+> If the wider repo has a healthy module you're refactoring _toward_, point the agent at it explicitly: _"Match the structure and conventions of `[good/module]`."_ Concrete exemplar beats abstract rule every time.
 
 ### A.3 Scripts contract
 
@@ -64,13 +68,15 @@ Capture:
 
 **Instead, use this prompt focus:** _"Here's the code [path]. Here's the quality goal [paste]. Propose 2–3 refactor strategies. Compare: incremental vs big-bang, branch-by-abstraction, strangler-fig, parallel-implementation. Which best preserves behavior given our test coverage?"_
 
-> **Pro Tip:** For risky refactors, prefer strategies that allow rollback at every step (incremental + small commits). Big-bang refactors look clean in retrospect; they're terrifying mid-execution.
+> [!WARNING]
+> For risky refactors, prefer strategies that allow rollback at every step (incremental + small commits). Big-bang refactors look clean in retrospect; they're terrifying mid-execution.
 
 ### B.3 Consolidated prompt prep
 
 **Instead:** Chunk = atomic refactor step where the test suite stays _green_ before and after. If a chunk leaves tests red, it's two chunks.
 
-> **Pro Tip:** "Move method", "extract function", "rename" are good chunk shapes. "Rewrite entire module" is not.
+> [!TIP]
+> "Move method", "extract function", "rename" are good chunk shapes. "Rewrite entire module" is not.
 
 ### B.4 Plan mode → review → finalize
 

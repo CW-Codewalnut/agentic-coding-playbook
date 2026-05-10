@@ -1,5 +1,6 @@
 # Greenfield — Agentic Coding Playbook
 
+> [!NOTE]
 > **What this is:** Brand-new project, no existing code. You're free to pick everything: framework, runtime, database, deploy target.
 >
 > **How to read:** Outline mirrors the [Base Guide](./01-base-guide.md). Under each phase, you'll see either `→ Same as Base §N.` or `Plus` / `Instead` deltas. Where there's no delta, follow Base.
@@ -22,7 +23,8 @@ Before any code or AGENTS.md exists, decide the architecture _shape_.
   - Observability stack
 - Consolidate. Pick. Write **ADR-001** (Architecture Decision Record — see [Michael Nygard's template](https://github.com/joelparkerhenderson/architecture-decision-record/blob/main/locales/en/templates/decision-record-template-by-michael-nygard/index.md)) capturing the decision and rationale.
 
-> **Pro Tip:** Don't decide framework versions or specific libraries here — pick those when you actually need them. Decide _shape_ only.
+> [!TIP]
+> Don't decide framework versions or specific libraries here — pick those when you actually need them. Decide _shape_ only.
 
 **Outcome:** ADR-001 in `docs/adr/` describing the architecture shape. You know what to put in `AGENTS.md` next.
 

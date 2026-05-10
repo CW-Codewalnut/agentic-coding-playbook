@@ -1,5 +1,6 @@
 # Brownfield — Agentic Coding Playbook
 
+> [!NOTE]
 > **What this is:** Existing project with existing code. You're adding new features without rewriting what's there. Architecture is a constraint, not a choice.
 >
 > **How to read:** Outline mirrors the [Base Guide](./01-base-guide.md). Under each phase, you'll see either `→ Same as Base §N.` or `Plus` / `Instead` deltas.
@@ -19,11 +20,14 @@ Before writing any new feature, capture _what's actually there_ into your agent 
 - Do the same for `.guidelines/` files: ask the agent to extract per-language conventions (TypeScript, React, Python, etc.) into separate files.
 - Manually edit. **You** are the source of truth — the agent's first pass is a starting draft.
 
-> **Pro Tip:** This is a one-time cost. Spend a couple of hours getting it right; you'll recoup it in every subsequent feature session.
+> [!TIP]
+> This is a one-time cost. Spend a couple of hours getting it right; you'll recoup it in every subsequent feature session.
 
-> **Pro Tip:** On large repos / monorepos, scope the agent first — _"Read only [specific paths]"_ — or run pattern extraction per package. A blanket "read this codebase" silently truncates on anything sizeable.
+> [!TIP]
+> On large repos / monorepos, scope the agent first — _"Read only [specific paths]"_ — or run pattern extraction per package. A blanket "read this codebase" silently truncates on anything sizeable.
 
-> **Pro Tip:** If the codebase has multiple inconsistent patterns, document the _preferred_ one and add a note like "legacy modules use [old pattern] — don't follow that for new code."
+> [!TIP]
+> If the codebase has multiple inconsistent patterns, document the _preferred_ one and add a note like "legacy modules use [old pattern] — don't follow that for new code."
 
 **Outcome:** AGENTS.md and `.guidelines/` reflecting the existing project's actual conventions.
 
