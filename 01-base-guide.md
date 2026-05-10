@@ -27,7 +27,7 @@
 
 The most important setup step. Pays back across every session.
 
-- **`AGENTS.md`** at repo root — single source of truth for agent rules. Both Claude Code and Codex read this.
+- **`AGENTS.md`** at repo root — single source of truth for agent rules.
 - **`CLAUDE.md`** is a symlink to `AGENTS.md`: `ln -s AGENTS.md CLAUDE.md`
 - **`.guidelines/`** directory — your team's coding standards split by language/framework (e.g. `typescript.md`, `react.md`, `python.md`, `db.md`).
 
@@ -45,7 +45,7 @@ What goes in `AGENTS.md`:
 
 ### A.3 Scripts contract
 
-Every agent turn auto-runs your formatter, linter, type-checker, tests, and e2e suite — _if_ the scripts are listed in `AGENTS.md` by name and runnable from the repo root.
+Every agent turn auto-runs your formatter, linter, type-checker, tests, and e2e suite — _if_ the scripts are listed in `AGENTS.md` by name and runnable from where the agent is running.
 
 | Script type  | Examples            |
 | ------------ | ------------------- |
@@ -61,7 +61,7 @@ Every agent turn auto-runs your formatter, linter, type-checker, tests, and e2e 
 
 Add this line to `AGENTS.md`:
 
-> When making UI changes, spin up the dev server, then use the Playwright CLI to navigate, take screenshots, and verify both layout and behavior.
+> When making UI changes, spin up the dev server (if not running already), then use the Playwright CLI to navigate, take screenshots, and verify both layout and behavior.
 
 With this in place + the Playwright CLI skill installed, _every_ UI turn ends with verification automatically. No need to mention it in the prompt.
 
@@ -91,7 +91,7 @@ In each session, in **plan mode**, use a prompt that:
 - States your high-level approach (or says "I have no clue, propose options")
 - Asks the agent to **research industry best practices** (web search) for this class of problem
 - Asks for **2–3 approaches with trade-offs**
-- Explicitly tells the agent: _"Use the AskUserQuestion tool to ask me questions before recommending."_
+- Explicitly tells the agent: _"Use the AskUserQuestion tool to ask me questions. Use the `grill-me` skill."_
 
 After all three sessions complete:
 
@@ -145,7 +145,7 @@ After all three sessions complete:
 - Verify the requirements yourself — does it actually do what you asked?
 - For UI: open the running app, exercise the feature manually. Even with screenshots, click around.
 - If you have an external E2E suite, run it.
-- **`git add` the files. Do not commit yet.**
+- **Stage the files. Do not commit yet.**
 
 > **Pro Tip:** Pre-AI, you'd manually test before committing. That habit doesn't go away — agents replace typing, not testing.
 
@@ -154,11 +154,9 @@ After all three sessions complete:
 ### B.7 Code-quality audit (same session)
 
 - Stay in the implementation session.
-- Prompt: _"I have staged all your changes. Audit the staged diff for code quality and consistency with the rest of the codebase. Check naming, folder structure, conventions, and the rules in `.guidelines/`."_
+- Prompt: _"I have staged all your changes. Audit the staged diff for code quality and consistency with the rest of the codebase. Check naming, folder structure, conventions, and the rules in `AGENTS.md` & `.guidelines/`."_
 - The agent returns a list of nits. Have it fix them.
 - Do a quick at-a-glance review yourself — naming, folder placement, file size, obvious smell. Don't deep-dive.
-
-> **Why same session?** It already has the implementation context. Cheaper, faster, more accurate audit.
 
 > **Why not deep-dive yourself?** Functional review happens in B.9 with a different agent. This step is just code-quality polish.
 
@@ -167,7 +165,7 @@ After all three sessions complete:
 ### B.8 Atomic commits
 
 - Open a fresh session at the **Standard tier** ([what's Standard?](./06-resources.md#model-picks-per-task)).
-- Prompt: _"strategically split, stage and commit the changes in the repo, use conventional commits"_
+- Prompt: _"strategically & meaningfully split, stage and commit the changes in the repo, use conventional commits"_
 
 **Outcome:** Clean atomic commits on your feature branch.
 
@@ -193,11 +191,10 @@ The high-leverage review step. **The agent that did the implementation does NOT 
 
 After cross-agent review and commits, **sleep on it**. Open the diff the next morning with fresh eyes. This is a pre-AI habit — still essential.
 
-- Review the feature end-to-end, not just the diff. Open the full changed files, walk the flow from entry point to outcome, scan adjacent functions, callers, and related modules. The diff is just where the change landed — your job is to understand what the feature actually _does_ in the system. Same way you did reviews pre-AI.
+- Review the feature end-to-end, not just the diff. Walk the flow from entry point to outcome, scan adjacent functions, callers, and related modules. The diff is just where the change landed — your job is to understand what the feature actually _does_ in the system. Same way you did reviews pre-AI.
 - Aim for fingertip familiarity with your own code. Pre-AI, wake you at 3am with a stack trace and you'd land on the offending line from memory — logs in, line of code out. That bar hasn't moved. Agents write the code; _you_ still own it. If you can't answer a question about your own feature without re-opening the file, you haven't really reviewed it.
 - The point isn't catching what the agents missed — they probably caught more than you will. The point is _you_ can **explain the PR** — explain decisions, justify trade-offs, answer reviewer pushback, reason about on-call implications. Knowing what shipped is just the floor.
 - Anything material to change: hand notes to your coding agent — _"Apply these changes: [list]"_ — then re-run §B.7 (audit), §B.8 (commits), and a quick `/review` re-run.
-- Cosmetic-only nits: defer to a follow-up PR.
 
 > **Why this step?** (1) You'll own this code in production — reviewers, on-call, post-mortem readers all assume you understand it. (2) Tired-you misses things fresh-you catches. Sleeping on a feature is the cheapest pair of glasses you'll buy.
 
@@ -206,14 +203,14 @@ After cross-agent review and commits, **sleep on it**. Open the diff the next mo
 ### B.11 Open PR via `gh` CLI
 
 - **Standard tier** is fine here ([tier reference](./06-resources.md#model-picks-per-task)).
-- Prompt: _"Open a PR for this branch against [base-branch]. Use the team PR title format and description template. The feature is: [one-paragraph overview]. Understand the changes yourself and fill in the template. Use GH cli."_
+- Prompt: _"Open a PR for this branch against [base-branch]. Use the team PR title format and description template. The feature is: [one-paragraph overview]. Understand the changes yourself and fill in the template. Use `gh` cli."_
 - If the change set is genuinely large: _"Split the work across multiple PRs along meaningful boundaries before opening. Suggest the split first; I'll approve before you create the PRs."_
 
 **Outcome:** PR(s) open with proper title, description, and template fields filled.
 
 ### B.12 AI code-reviewer feedback loop
 
-External AI reviewer (CodeRabbit / MergeMitra / Greptile / similar) posts comments on the PR.
+External AI reviewer (MergeMitra / Greptile / CodeRabbit / similar) posts comments on the PR.
 
 - Open a coding-agent session.
 - Prompt: _"Read the PR comments using `gh` cli. Validate each comment against the actual code. Fix the valid ones, leave a reply explaining any you disagree with. Push the fixes to the same branch."_
@@ -231,12 +228,11 @@ These aren't phases — they apply across the whole workflow.
 - **Council of Agents = 2× Claude + 1× Codex** in fresh sessions for any non-trivial brainstorm. Exploit LLM probabilism.
 - **Same session for code-quality audit; opposite agent for functional review.** Different lenses, different sessions. Don't conflate.
 - **Right tier for the task.** A "tier" is model + reasoning effort, not just model size. See [Resources → Model picks](./06-resources.md#model-picks-per-task) for the legend and full mapping. Quick version:
-  - _Planning, implementation, review, audits:_ **Heavy**
-  - _PR creation, AI-reviewer fix loop:_ **Standard**
-  - _Atomic commits, mechanical greps:_ **Light**
+  - _Planning, implementation, review, audits, AI-reviewer fix loop:_ **Heavy**
+  - _PR creation, Atomic commits, mechanical greps:_ **Standard**
 - **AGENTS.md does the boring enforcement.** Lint, type-check, test, e2e, screenshots — all auto. Don't ask manually.
 - **Compact the conversation regularly.** Long sessions accumulate stale context. `/compact` periodically — especially before a tricky follow-up turn.
-- **Git is the source of truth, not the agent's claims.** Always verify changes via the diff viewer. If the agent says "done" and the diff is empty, it's not done.
+- **Git is the source of truth, not the agent's claims.** Always verify changes via the diff viewer.
 - **Test data quality decides app quality** in data-driven apps. Spend time generating realistic synthetic data with edge cases — not just happy-path fixtures.
 - **Manual verification doesn't go away.** Agents replace typing, not testing. Always exercise the feature yourself before opening a PR.
 
