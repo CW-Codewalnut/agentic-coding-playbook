@@ -46,17 +46,17 @@ Choose any two as your regular pair. Use one to plan and implement and the other
 > [!NOTE]
 > Model names change. Keep the table concrete anyway, then refresh it when your tools change.
 
-| Task                              | Good default                                      | Why                                        |
-| --------------------------------- | ------------------------------------------------- | ------------------------------------------ |
-| Architecture brainstorm           | Claude Opus 4.5 high or GPT-5.5 xhigh             | Reasoning depth shapes the whole project   |
-| Council of Agents                 | Claude Opus 4.5 high plus GPT-5.5 xhigh           | Different models expose different options  |
-| Plan mode                         | Claude Opus 4.5 high or GPT-5.5 xhigh             | Bad plan creates bad implementation        |
-| Implementation                    | Claude Opus 4.5 high, GPT-5.5 high/xhigh, or Cursor with its strongest coding model | Code quality is the deliverable |
-| Code-quality audit (same session) | Same model and session used for implementation    | Reuses implementation context              |
-| Cross-agent `/review`             | Fresh reviewer on the other surface: Claude Opus 4.5 high, GPT-5.5 xhigh, or Cursor review | Fresh reasoning catches missed behavior |
-| PR creation                       | Claude Sonnet 4.6 medium or GPT-5.4 medium        | Template filling is structured work        |
-| AI reviewer fix loop              | Claude Opus 4.5 high or GPT-5.5 high/xhigh        | Requires validation against real code      |
-| Atomic commit splitter            | Claude Sonnet 4.6 medium or GPT-5.4 medium        | Works over a known diff                    |
+| Task                              | Good default                                                                               | Why                                       |
+| --------------------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------- |
+| Architecture brainstorm           | Claude Opus 4.8 high or GPT-5.5 xhigh                                                      | Reasoning depth shapes the whole project  |
+| Council of Agents                 | Claude Opus 4.8 high plus GPT-5.5 xhigh                                                    | Different models expose different options |
+| Plan mode                         | Claude Opus 4.8 high or GPT-5.5 xhigh                                                      | Bad plan creates bad implementation       |
+| Implementation                    | Claude Opus 4.8 high, GPT-5.5 high/xhigh, or Cursor with its strongest coding model        | Code quality is the deliverable           |
+| Code-quality audit (same session) | Same model and session used for implementation                                             | Reuses implementation context             |
+| Cross-agent `/review`             | Fresh reviewer on the other surface: Claude Opus 4.5 high, GPT-5.5 xhigh, or Cursor review | Fresh reasoning catches missed behavior   |
+| PR creation                       | Claude Sonnet 4.6 medium or GPT-5.4 medium                                                 | Template filling is structured work       |
+| AI reviewer fix loop              | Claude Opus 4.8 high or GPT-5.5 high/xhigh                                                 | Requires validation against real code     |
+| Atomic commit splitter            | Claude Sonnet 4.6 medium or GPT-5.4 medium                                                 | Works over a known diff                   |
 
 Use Claude Haiku 4.5 or GPT-5.4-mini only for mechanical searches, quick summaries, or low-risk cleanup. Do not use them for architecture, behavior review, or risky refactors.
 

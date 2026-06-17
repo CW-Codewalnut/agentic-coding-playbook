@@ -62,7 +62,7 @@ Reasonably sized feature work. For tiny fixes, use judgment and skip certain ste
 ## Conventions
 
 - The guide stays practical and scannable, but it explains why each step exists.
-- Pro tips and rationale notes appear as GitHub alerts (`[!TIP]`, `[!IMPORTANT]`, `[!NOTE]`).
+- Tips and rationale notes appear as GitHub alerts (`[!TIP]`, `[!IMPORTANT]`, `[!NOTE]`).
 - Prompt snippets appear as fenced code.
 - Stable section labels (`A.1`, `B.7`, etc.) let the variant docs reference the Base Guide.
 - Model and reasoning guidance lives in [Resources](./06-resources.md#model-picks-per-task).
