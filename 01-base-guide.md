@@ -251,7 +251,7 @@ Treat cross-agent review as a second opinion from a fresh reviewer. The goal is 
 
 After cross-agent review and commits, sleep on it if the change is meaningful. Open the diff later with a fresh mind.
 
-- Review the feature end-to-end, not just the changed lines.
+- Review the full feature flow, including the surrounding code.
 - Walk the flow from entry point to outcome.
 - Scan adjacent functions, callers, and shared modules.
 - Make sure you can explain the PR without asking the agent again.

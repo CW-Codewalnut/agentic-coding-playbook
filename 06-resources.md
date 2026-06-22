@@ -39,6 +39,21 @@ Choose any two as your regular pair. Use one to plan and implement and the other
 - [Playwright CLI](https://playwright.dev/agent-cli/introduction)
 - [Agent Browser](https://agent-browser.dev/)
 
+### Token and context tools
+
+- [RTK](https://www.rtk-ai.app/): CLI proxy for compacting noisy terminal output before it enters an agent context. Useful for tests, builds, git output, logs, and broad searches. Treat savings numbers as directional and verify against your own commands.
+
+### Code retrieval and structure tools
+
+Use these to find the right files before loading full code into context. They help with orientation, but the agent should still read the exact source files and tests before editing.
+
+- [Aider repository map](https://aider.chat/docs/repomap.html)
+- [Sourcegraph Code Search](https://sourcegraph.com/docs/code-search)
+- [Semgrep](https://semgrep.dev/)
+- [ast-grep](https://ast-grep.github.io/)
+- [CodeQL](https://codeql.github.com/)
+- [Graphify](https://graphify.net/)
+
 ---
 
 ## Model picks per task
@@ -65,7 +80,7 @@ Use Claude Haiku 4.5 or GPT-5.4-mini only for mechanical searches, quick summari
 ## Agent Skills
 
 > [!NOTE]
-> Skills can save repeated prompting. Each link points to [skills.sh](https://skills.sh/).
+> Skills can save repeated prompting. Start with individual skills on [skills.sh](https://skills.sh/), then browse source repositories for larger collections.
 
 - **[Superpowers](https://skills.sh/obra/superpowers):** meta-skill bundle for brainstorming, planning, debugging, and related workflows.
 - **[Frontend Design](https://skills.sh/anthropics/skills/frontend-design):** UI and frontend implementation guidance.
@@ -73,3 +88,13 @@ Use Claude Haiku 4.5 or GPT-5.4-mini only for mechanical searches, quick summari
 - **[PR Document Writer](https://skills.sh/cw-codewalnut/agent-skills/pr-document-writer):** generates Enterprise-grade PR titles and descriptions.
 - **[Awesome Copilot](https://skills.sh/github/awesome-copilot):** curated collection of agent skills and assets.
 - **[Grill Me](https://skills.sh/mattpocock/skills/grill-me):** questioning skill that stress-tests plans and designs.
+- **[Ponytail](https://skills.sh/dietrichgebert/ponytail/ponytail):** minimalist (YAGNI) skill that biases the agent toward the smallest solution that works and code-first, low-prose replies; trims output tokens and code to maintain.
+
+### Skill repositories
+
+- **[Superpowers](https://github.com/obra/superpowers)**
+- **[Andrej Karpathy Skills](https://github.com/multica-ai/andrej-karpathy-skills)**
+- **[Matt Pocock Skills](https://github.com/mattpocock/skills)**
+- **[GStack](https://github.com/garrytan/gstack)**
+- **[Addy Osmani Agent Skills](https://github.com/addyosmani/agent-skills)**
+- **[Anthropic Skills](https://github.com/anthropics/skills)**

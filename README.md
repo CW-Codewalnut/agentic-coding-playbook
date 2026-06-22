@@ -41,6 +41,8 @@ Reasonably sized feature work. For tiny fixes, use judgment and skip certain ste
 - [04-refactoring-legacy.md](./04-refactoring-legacy.md): behavior-preserving refactors.
 - [05-enterprise.md](./05-enterprise.md): high-NFR and regulated work.
 - [06-resources.md](./06-resources.md): model guidance, tool links, and skill links.
+- [07-token-economics.md](./07-token-economics.md): cut token (and dollar) costs without losing quality.
+- [GLOSSARY.md](./GLOSSARY.md): shared terms used across the playbook.
 - [resources/](./resources/): TypeScript-stack templates you can copy into your own repo and adapt.
 
 ## How to read
@@ -52,6 +54,7 @@ Reasonably sized feature work. For tiny fixes, use judgment and skip certain ste
    - **[Refactoring Legacy](./04-refactoring-legacy.md)**: improving structure without changing behavior.
    - **[Enterprise (High-NFR)](./05-enterprise.md)**: extra checks for performance, accessibility, compliance, security, observability, and audit trails.
 3. Keep **[Resources](./06-resources.md)** open for tool links, model guidance, and reusable skills.
+4. Use **[Glossary](./GLOSSARY.md)** when a term is unclear or reused across variants.
 
 ## What you'll need
 
