@@ -54,7 +54,7 @@ Same as [Base A.1](./01-base-guide.md#a1-tools-and-environment).
 
 ### A.2 The agent rules file
 
-Same as [Base A.2](./01-base-guide.md#a2-the-agent-rules-file-agentsmd-claudemd-guidelines), but populated from the A.0 readiness pass.
+Same as [Base A.2](./01-base-guide.md#a2-the-agent-rules-file-agentsmd--claudemd--guidelines), but populated from the A.0 readiness pass.
 
 For a healthy repo, document the conventions currently worth following.
 

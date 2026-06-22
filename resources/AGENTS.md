@@ -1,7 +1,7 @@
 > **Starter `AGENTS.md` template for TypeScript projects.**
 > Copy this to your repo root, fill in the `_[...]_` placeholders, and trim sections that do not apply to your stack.
 > Sections without placeholders are defaults for a modern Bun + TS + Drizzle stack. Keep, edit, or replace them as needed.
-> See [Base A.2](../01-base-guide.md#a2-the-agent-rules-file-agentsmd-claudemd-guidelines) for setup notes.
+> See [Base A.2](../01-base-guide.md#a2-the-agent-rules-file-agentsmd--claudemd--guidelines) for setup notes.
 
 ## Product Overview
 

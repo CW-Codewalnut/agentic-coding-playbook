@@ -9,7 +9,7 @@
 
 ## Reference templates: AGENTS.md and .guidelines
 
-- [`resources/AGENTS.md`](./resources/AGENTS.md): drop at your repo root. Edit the placeholders and your team conventions. See [Base A.2](./01-base-guide.md#a2-the-agent-rules-file-agentsmd-claudemd-guidelines).
+- [`resources/AGENTS.md`](./resources/AGENTS.md): drop at your repo root. Edit the placeholders and your team conventions. See [Base A.2](./01-base-guide.md#a2-the-agent-rules-file-agentsmd--claudemd--guidelines).
 - [`resources/.guidelines/`](./resources/.guidelines/): drop at your repo root. It includes our current team rules for `standard.md`, `javascript.md`, `typescript.md`, and `react.md`. Add files as your stack grows, such as `python.md`, `postgres.md`.
 
 > [!TIP]
